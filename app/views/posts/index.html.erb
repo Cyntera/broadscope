@@ -3,17 +3,12 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2>BroadForum</h2>
+<%= link_to 'New Post', new_post_path %>
 
     <% @posts.each do |post| %>
-        <h3><%= post.title %></h3>
+        <h3><%= link_to post.title, post %></h3>
         <p><%= post.body.first(20) + "..." %></>
-        <p><%= post.user_id %></p2>
-        <td><%= link_to 'Show', post %></td>
+        <p><%= post.user_id %></p>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
