@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :posts
   get 'pages/contact'
 
   get 'pages/homebodies'
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
 
   get '/homebodies' => 'pages#homebodies'
 
-  get '/forum' => 'pages#forum'
+  get '/forum' => 'posts#index'
 
   get '/contact' => 'pages#contact'
 end
